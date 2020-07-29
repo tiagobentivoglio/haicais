@@ -1,5 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
+
 import re
 import random
 !pip install -U spacy
@@ -87,7 +86,6 @@ def proximo_verso(anterior):
     proximo = gerador_verso(base)
 
     while nlp(proximo).similarity(nlp(anterior)) < 0.6:
-        proximo = ''
         proximo = gerador_verso(base)
 
     return proximo
